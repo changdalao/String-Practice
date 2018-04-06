@@ -3,18 +3,17 @@
 #include<assert.h>
 #include"Stack.h"
 
-//»ØÎÄ×Ö·û´®µÄÅÐ¶Ï
-
-//·½·¨1£º
-//ÓÃÕ»ÅÐ¶Ï£¬×Ö·û´®ÈëÕ»£¬³öÕ»Ê±ºÍÔ­×Ö·û´®Ïà±È£¬Èç¹ûÕ»Îª¿Õ£¬ÇÒ×Ö·û´®±éÀú½áÊøÆÚ¼ä¶¼ÏàµÈ£¬ÔòÎª»ØÎÄ×Ö·û´®
+//å›žæ–‡å­—ç¬¦ä¸²çš„åˆ¤æ–­
+//æ–¹æ³•1ï¼š
+//ç”¨æ ˆåˆ¤æ–­ï¼Œå­—ç¬¦ä¸²å…¥æ ˆï¼Œå‡ºæ ˆæ—¶å’ŒåŽŸå­—ç¬¦ä¸²ç›¸æ¯”ï¼Œå¦‚æžœæ ˆä¸ºç©ºï¼Œä¸”å­—ç¬¦ä¸²éåŽ†ç»“æŸæœŸé—´éƒ½ç›¸ç­‰ï¼Œåˆ™ä¸ºå›žæ–‡å­—ç¬¦ä¸²
 int IsPalindrome1(char* arr,int len)
 {
 	assert(arr);
 	Stack s;
 	StackInit(&s);
-	for (int i = 0; i < len; i++)//×Ö·û´®°¤¸öÈëÕ»
+	for (int i = 0; i < len; i++)//å­—ç¬¦ä¸²æŒ¨ä¸ªå…¥æ ˆ
 		StackPush(&s, arr[i]);
-	while (StackEmpty(&s) && (*arr != '\0'))//³öÕ»½øÐÐÅÐ¶Ï
+	while (StackEmpty(&s) && (*arr != '\0'))//å‡ºæ ˆè¿›è¡Œåˆ¤æ–­
 	{
 		char tmp = StackTop(&s);
 		if (*arr == tmp)
@@ -29,8 +28,8 @@ int IsPalindrome1(char* arr,int len)
 
 }
 
-//·½·¨2£º´ÓÁ½±ßÏòÖÐ¼ä±éÀúÅÐ¶Ï
-//Ê±¼ä¸´ÔÓ¶ÈO(n)
+//æ–¹æ³•2ï¼šä»Žä¸¤è¾¹å‘ä¸­é—´éåŽ†åˆ¤æ–­
+//æ—¶é—´å¤æ‚åº¦O(n)
 int IsPalindrome2(char* arr,int len)
 {
 	assert(arr);
@@ -49,8 +48,8 @@ int IsPalindrome2(char* arr,int len)
 void Test2()
 {
 	char* arr = "aabccbaa";
-	//ÅÐ¶Ï×Ö·û´®ÊÇ·ñ»ØÎÄ×Ö·û´®£¬²»±ÈÐÞ¸Ä×Ö·û´®ÄÚÈÝ£¬ËùÒÔ¶¨ÒåÎªchar*,×Ö·û´®±£´æÔÚ×Ö·û³£Á¿Çø£¬¼´constÀàÐÍ£¬²»¿É¸ü¸Ä
+	//åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦å›žæ–‡å­—ç¬¦ä¸²ï¼Œä¸æ¯”ä¿®æ”¹å­—ç¬¦ä¸²å†…å®¹ï¼Œæ‰€ä»¥å®šä¹‰ä¸ºchar*,å­—ç¬¦ä¸²ä¿å­˜åœ¨å­—ç¬¦å¸¸é‡åŒºï¼Œå³constç±»åž‹ï¼Œä¸å¯æ›´æ”¹
 	int len = strlen(arr);
-	printf("ÊÇ·ñ»ØÎÄ×Ö·û´®?>%d\n", IsPalindrome1(arr,len));
-	printf("ÊÇ·ñ»ØÎÄ×Ö·û´®?>%d\n", IsPalindrome2(arr, len));
+	printf("æ˜¯å¦å›žæ–‡å­—ç¬¦ä¸²?>%d\n", IsPalindrome1(arr,len));
+	printf("æ˜¯å¦å›žæ–‡å­—ç¬¦ä¸²?>%d\n", IsPalindrome2(arr, len));
 }
