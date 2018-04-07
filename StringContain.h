@@ -2,9 +2,9 @@
 #include<stdio.h>
 #include<assert.h>
 
-//×Ö·û´®µÄ°üº¬
+//å­—ç¬¦ä¸²çš„åŒ…å«
 
-//·½·¨1£º±éÀú²éÑ¯O(m*n)
+//æ–¹æ³•1ï¼šéåŽ†æŸ¥è¯¢O(m*n)
 int StringContain1(const char* arr, const char* a)
 {
 	assert(arr&&a);
@@ -12,7 +12,7 @@ int StringContain1(const char* arr, const char* a)
 	char* src = a;
 	while (*src != NULL)
 	{
-		des = arr;//²éÑ¯Ò»´Îºó£¬Ðè½«desÖØÐÂÖÃÎªÔ­À´×Ö·û´®µÄ¿ªÊ¼£¬ÖØÐÂ²éÑ¯
+		des = arr;//æŸ¥è¯¢ä¸€æ¬¡åŽï¼Œéœ€å°†desé‡æ–°ç½®ä¸ºåŽŸæ¥å­—ç¬¦ä¸²çš„å¼€å§‹ï¼Œé‡æ–°æŸ¥è¯¢
 		while (*des)
 		{
 			if (*src == *des)
@@ -36,18 +36,18 @@ void Test3()
 	char* a4 = "EEBD";
 	char* a5 = "BEF";
 	char* a6 = "abcde";
-	
-	printf("\"AACD\"ÊÇ·ñÊÇ\"ABCDE\"µÄ×Ó´®?>%d\n", StringContain1(arr,a1));
-	printf("\"BDEC\"ÊÇ·ñÊÇ\"ABCDE\"µÄ×Ó´®?>%d\n", StringContain1(arr,a2));
-	printf("\"ECDA\"ÊÇ·ñÊÇ\"ABCDE\"µÄ×Ó´®?>%d\n", StringContain1(arr,a3));
-	printf("\"EEBD\"ÊÇ·ñÊÇ\"ABCDE\"µÄ×Ó´®?>%d\n", StringContain1(arr,a4));
-	printf("\"BEF\"ÊÇ·ñÊÇ\"ABCDE\"µÄ×Ó´®?>%d\n", StringContain1(arr, a5));
-	printf("\"abcde\"ÊÇ·ñÊÇ\"ABCDE\"µÄ×Ó´®?>%d\n", StringContain1(arr,a6));
+	 
+	printf("\"AACD\"æ˜¯å¦æ˜¯\"ABCDE\"çš„å­ä¸²?>%d\n", StringContain1(arr,a1));
+	printf("\"BDEC\"æ˜¯å¦æ˜¯\"ABCDE\"çš„å­ä¸²?>%d\n", StringContain1(arr,a2));
+	printf("\"ECDA\"æ˜¯å¦æ˜¯\"ABCDE\"çš„å­ä¸²?>%d\n", StringContain1(arr,a3));
+	printf("\"EEBD\"æ˜¯å¦æ˜¯\"ABCDE\"çš„å­ä¸²?>%d\n", StringContain1(arr,a4));
+	printf("\"BEF\"æ˜¯å¦æ˜¯\"ABCDE\"çš„å­ä¸²?>%d\n", StringContain1(arr, a5));
+	printf("\"abcde\"æ˜¯å¦æ˜¯\"ABCDE\"çš„å­ä¸²?>%d\n", StringContain1(arr,a6));
 
-	//printf("\"AACD\"ÊÇ·ñÊÇ\"ABCDE\"µÄ×Ó´®?>%d\n",StringContain2(arr,strlen(arr),a1,strlen(a1)));
-	//printf("\"BDEC\"ÊÇ·ñÊÇ\"ABCDE\"µÄ×Ó´®?>%d\n", StringContain2(arr, strlen(arr), a2, strlen(a1)));
-	//printf("\"ECDA\"ÊÇ·ñÊÇ\"ABCDE\"µÄ×Ó´®?>%d\n", StringContain2(arr, strlen(arr), a3, strlen(a1)));
-	//printf("\"EEBD\"ÊÇ·ñÊÇ\"ABCDE\"µÄ×Ó´®?>%d\n", StringContain2(arr, strlen(arr), a4, strlen(a1)));
-	//printf("\"BEF\"ÊÇ·ñÊÇ\"ABCDE\"µÄ×Ó´®?>%d\n", StringContain2(arr, strlen(arr), a5, strlen(a1)));
-	//printf("\"abcde\"ÊÇ·ñÊÇ\"ABCDE\"µÄ×Ó´®?>%d\n", StringContain2(arr, strlen(arr), a6, strlen(a1)));
+	//printf("\"AACD\"æ˜¯å¦æ˜¯\"ABCDE\"çš„å­ä¸²?>%d\n",StringContain2(arr,strlen(arr),a1,strlen(a1)));
+	//printf("\"BDEC\"æ˜¯å¦æ˜¯\"ABCDE\"çš„å­ä¸²?>%d\n", StringContain2(arr, strlen(arr), a2, strlen(a1)));
+	//printf("\"ECDA\"æ˜¯å¦æ˜¯\"ABCDE\"çš„å­ä¸²?>%d\n", StringContain2(arr, strlen(arr), a3, strlen(a1)));
+	//printf("\"EEBD\"æ˜¯å¦æ˜¯\"ABCDE\"çš„å­ä¸²?>%d\n", StringContain2(arr, strlen(arr), a4, strlen(a1)));
+	//printf("\"BEF\"æ˜¯å¦æ˜¯\"ABCDE\"çš„å­ä¸²?>%d\n", StringContain2(arr, strlen(arr), a5, strlen(a1)));
+	//printf("\"abcde\"æ˜¯å¦æ˜¯\"ABCDE\"çš„å­ä¸²?>%d\n", StringContain2(arr, strlen(arr), a6, strlen(a1)));
 }
