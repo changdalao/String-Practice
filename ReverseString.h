@@ -2,9 +2,9 @@
 #include<stdio.h>
 #include<assert.h>
 
-//×Ö·û´®µÄÐý×ª
-
-//·½·¨1:¼òµ¥´Ö±©µØÒ»¸öÒ»¸ö×Ö·ûÒÆ¶¯£¬Ðý×ªm¸ö×Ö·û,×Ö·û´®³¤¶ÈÎªn,Ê±¼ä¸´ÔÓ¶ÈÎªO(m*n)
+//å­—ç¬¦ä¸²çš„æ—‹è½¬
+ 
+//æ–¹æ³•1:ç®€å•ç²—æš´åœ°ä¸€ä¸ªä¸€ä¸ªå­—ç¬¦ç§»åŠ¨ï¼Œæ—‹è½¬mä¸ªå­—ç¬¦,å­—ç¬¦ä¸²é•¿åº¦ä¸ºn,æ—¶é—´å¤æ‚åº¦ä¸ºO(m*n)
 void ReverseStringOne(char* arr,int n)
 {
 	assert(arr);
@@ -20,11 +20,11 @@ void ReverseStringOne(char* arr,int n)
 void ReverseString(char* arr,int input,int n)
 {
 	assert(arr);
-	while (input--)//¶à´ÎÐý×ª
-		ReverseStringOne(arr, n);//µ¥´ÎÐý×ª
+	while (input--)//å¤šæ¬¡æ—‹è½¬
+		ReverseStringOne(arr, n);//å•æ¬¡æ—‹è½¬
 }
 
-//·½·¨2£º½«Ðý×ªµÄ×Ö·û¿´×öÒ»¸öÕûÌå
+//æ–¹æ³•2ï¼šå°†æ—‹è½¬çš„å­—ç¬¦çœ‹åšä¸€ä¸ªæ•´ä½“
 void Reverse(char* arr, int begin, int end)
 {
 	assert(arr);
@@ -46,13 +46,13 @@ void ReverseStringR(char* arr, int input, int n)
 void Test1()
 {
 	char* arr = "abcdef";
-	//²»ÄÜÐ´char* arr="abcdef",ÕâÑùÐ´×Ö·û´®±£´æÔÚ×Ö·û³£Á¿Çø£¬constÀàÐÍ£¬²»¿É¸ü¸Ä
+	//ä¸èƒ½å†™char* arr="abcdef",è¿™æ ·å†™å­—ç¬¦ä¸²ä¿å­˜åœ¨å­—ç¬¦å¸¸é‡åŒºï¼Œconstç±»åž‹ï¼Œä¸å¯æ›´æ”¹
 	int input = 0;
-	printf("Ô­×Ö·û´®>%s\n", arr);
-	printf("ÇëÊäÈëÐý×ª¸öÊý>");
+	printf("åŽŸå­—ç¬¦ä¸²>%s\n", arr);
+	printf("è¯·è¾“å…¥æ—‹è½¬ä¸ªæ•°>");
 	scanf("%d", &input);
 	//ReverseString(arr, (input % (strlen(arr))) , strlen(arr));
 	ReverseStringR(arr, (input % (strlen(arr))) , strlen(arr));
 
-	printf("Ðý×ª%d´Îºó£¬×Ö·û´®Îª>%s\n", input, arr);
+	printf("æ—‹è½¬%dæ¬¡åŽï¼Œå­—ç¬¦ä¸²ä¸º>%s\n", input, arr);
 }
