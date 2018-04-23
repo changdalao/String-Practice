@@ -15,16 +15,16 @@ void Print(int* a, size_t n)
 	}
 	printf("\n");
 }
-void InsertSort(int* a, size_t n)//Ö±½Ó²åÈëÅÅĞò
+void InsertSort(int* a, size_t n)//ç›´æ¥æ’å…¥æ’åº
 {
 	assert(n);
 	for (size_t i = 0; i < n - 1; i++)
 	{
 		int end = i;
 		int tmp = a[end + 1];
-		while (end >= 0)//µ¥´ÎÅÅĞò
+		while (end >= 0)//å•æ¬¡æ’åº
 		{
-			if (a[end] > tmp)//²éÕÒ±ÈtmpĞ¡µÄÎ»ÖÃ,²¢ÇÒºóÒÆÊı¾İ
+			if (a[end] > tmp)//æŸ¥æ‰¾æ¯”tmpå°çš„ä½ç½®,å¹¶ä¸”åç§»æ•°æ®
 			{
 				a[end + 1] = a[end];
 				end--;
@@ -35,7 +35,7 @@ void InsertSort(int* a, size_t n)//Ö±½Ó²åÈëÅÅĞò
 		a[end + 1] = tmp;
 	}
 }
-//ÓÅ»¯1£ºÈıÊıÈ¡ÖĞ
+//ä¼˜åŒ–1ï¼šä¸‰æ•°å–ä¸­
 int MidInRange(int* a, int left, int right)
 {
 	int mid = left + ((right - left) >> 1);
@@ -58,32 +58,32 @@ int MidInRange(int* a, int left, int right)
 			return right;
 	}
 }
-//·½·¨1£º×óÓÒÖ¸Õë·¨
+//æ–¹æ³•1ï¼šå·¦å³æŒ‡é’ˆæ³•
 int Partion1(int* a, int left, int right)
 {
-	int index = MidInRange(a, left, right);//ÈıÊıÈ¡ÖĞÓÅ»¯
+	int index = MidInRange(a, left, right);//ä¸‰æ•°å–ä¸­ä¼˜åŒ–
 	Swap(&a[index], &a[right]);
 	int key = a[right];
 	int begin = left, end = right;
 	while (begin < end)
 	{
-		while (a[begin] <= key && (begin<end))//ÕÒµ½×ó±ß±Èkey´óµÄ
+		while (a[begin] <= key && (begin<end))//æ‰¾åˆ°å·¦è¾¹æ¯”keyå¤§çš„
 			begin++;
-		while (a[end] >= key && (begin<end))//ÕÒµ½ÓÒ±ß±ÈkeyĞ¡µÄ
+		while (a[end] >= key && (begin<end))//æ‰¾åˆ°å³è¾¹æ¯”keyå°çš„
 			end--;
-		Swap(&a[begin], &a[end]);//½»»»×óÓÒÖµ
+		Swap(&a[begin], &a[end]);//äº¤æ¢å·¦å³å€¼
 	}
-	//ÕÒµ½keyµÄºÏÊÊÎ»ÖÃ£¬½«key²åÈë
+	//æ‰¾åˆ°keyçš„åˆé€‚ä½ç½®ï¼Œå°†keyæ’å…¥
 	Swap(&a[end], &a[right]);
 	return begin;
 }
-//·½·¨2£ºÍÚ¿Ó·¨
+//æ–¹æ³•2ï¼šæŒ–å‘æ³•
 int Partion2(int* a, int left, int right)
 {
 	assert(a);
 	int key = a[right];
 	int begin = left, end = right;
-	if (end - begin <= 25)//ÓÅ»¯·½°¸£ºËõĞ¡Çø¼ä
+	if (end - begin <= 25)//ä¼˜åŒ–æ–¹æ¡ˆï¼šç¼©å°åŒºé—´
 		InsertSort(a, right - left + 1);
 	else
 	{
@@ -100,7 +100,7 @@ int Partion2(int* a, int left, int right)
 		return begin;
 	}
 }
-//·½·¨3;Ç°ºóÖ¸Õë·¨
+//æ–¹æ³•3;å‰åæŒ‡é’ˆæ³•
 int Partion3(int* a, int left, int right)
 {
 	assert(a);
@@ -122,18 +122,18 @@ int Partion3(int* a, int left, int right)
 
 #include"Stack.h"
 
-//µİ¹é
+//é€’å½’
 void QuickSort(int* a, int left, int right)
 {
 	assert(a);
 	if (left < right)
 	{
 		int div = Partion1(a, left, right);
-		QuickSort(a, 0, div-1);//×ó
-		QuickSort(a, div+1, right);//ÓÒ
+		QuickSort(a, 0, div-1);//å·¦   
+		QuickSort(a, div+1, right);//å³
 	}
 }
-//·Çµİ¹é
+//éé€’å½’
 void QuickSortR(int* a, int left, int right)
 {
 	assert(a);
@@ -148,7 +148,7 @@ void QuickSortR(int* a, int left, int right)
 		int begin = StackTop(&s);
 		StackPop(&s);
 		int div = Partion1(a, begin, end);
-		if (begin < div - 1)
+		if (begin < div - 1)   
 		{
 			StackPush(&s, begin);
 			StackPush(&s, div - 1);
