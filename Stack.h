@@ -58,7 +58,7 @@ size_t StackSize(Stack* s)
 	return s->top;
 }
 
-//·µ»Ø0¾ÍÊÇ¿Õ
+//åˆ¤ç©º
 int StackEmpty(Stack* s)
 {
 	assert(s);
